@@ -167,10 +167,17 @@
     });
   });
 
-  /* ---------- 8. Contact form: validation + mailto ---------- */
+  /* ---------- 8. Contact form: validation + Netlify Forms ---------- */
   var form = document.getElementById('contactForm');
+  var okBox = document.getElementById('formOk');
+  var errBox = document.getElementById('formErr');
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
+    okBox.classList.add('d-none');
+    errBox.classList.add('d-none');
+
+    // 1) Check every field
     var ok = true;
     form.querySelectorAll('.form-control').forEach(function (f) {
       var valid = f.checkValidity() && f.value.trim() !== '';
@@ -180,16 +187,28 @@
     });
     if (!ok) return;
 
-    var name = document.getElementById('name').value.trim();
-    var email = document.getElementById('email').value.trim();
-    var subject = document.getElementById('subject').value.trim();
-    var message = document.getElementById('message').value.trim();
-    var body = 'Name: ' + name + '\nEmail: ' + email + '\n\n' + message;
+    // 2) Send the data to Netlify (no page reload)
+    var button = form.querySelector('button[type="submit"]');
+    button.disabled = true;
+    button.textContent = 'Sending...';
 
-    document.getElementById('formOk').classList.remove('d-none');
-    window.location.href = 'mailto:syedahooriya030@gmail.com?subject=' +
-      encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-    form.reset();
-    form.querySelectorAll('.form-control').forEach(function (f) { f.classList.remove('is-valid'); });
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(new FormData(form)).toString()
+    })
+      .then(function (res) {
+        if (!res.ok) throw new Error('Send failed');
+        okBox.classList.remove('d-none');   // green success message
+        form.reset();
+        form.querySelectorAll('.form-control').forEach(function (f) { f.classList.remove('is-valid'); });
+      })
+      .catch(function () {
+        errBox.classList.remove('d-none');  // red message with your email
+      })
+      .finally(function () {
+        button.disabled = false;
+        button.textContent = 'Send Message';
+      });
   });
 })();

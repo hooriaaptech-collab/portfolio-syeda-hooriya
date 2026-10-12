@@ -99,7 +99,7 @@
           <div class="col-lg-4 reveal">
             <div class="row g-3">
               <!-- data-target = number the counter counts up to -->
-              <div class="col-6"><div class="glass stat"><b data-target="10">0</b><span>+</span><small>Projects</small></div></div>
+              <div class="col-6"><div class="glass stat"><b data-target="3">0</b><span>+</span><small>Projects</small></div></div>
               <div class="col-6"><div class="glass stat"><b data-target="7">0</b><span></span><small>Technologies</small></div></div>
               <div class="col-6"><div class="glass stat"><b data-target="100">0</b><span>%</span><small>Client Satisfaction</small></div></div>
               <div class="col-6"><div class="glass stat"><b data-target="1">0</b><span>+</span><small>Years Learning</small></div></div>
@@ -127,39 +127,46 @@
     </section>
 
     <!-- ============ PROJECTS ============ -->
-    <!-- TO EDIT: replace both github.com/hooriaaptech-collab links in each card with the real repo / live demo URL -->
+    <!-- TO ADD A PROJECT: copy one whole <div class="col-12 col-md-6 col-xl-4 reveal"> ... </div> block and edit it.
+         Thumbnail colors: t1, t2, t3, t4 (see style.css). -->
     <section id="projects" class="section">
       <div class="container">
         <h2 class="section-title grad-text reveal">Projects</h2>
-        <div class="row g-4">
-          <div class="col-12 col-md-6 col-xl-3 reveal"><article class="glass tilt project">
+        <div class="row g-4 justify-content-center">
+
+          <!-- Project 1: FOTOLAB -->
+          <div class="col-12 col-md-6 col-xl-4 reveal"><article class="glass tilt project">
             <div class="thumb t1"></div>
-            <h3>E-Commerce Store</h3>
-            <p>Product catalog, cart and admin panel.</p>
-            <div class="badges"><span>Laravel</span><span>MySQL</span><span>Bootstrap</span></div>
-            <div class="d-flex gap-2"><a class="btn btn-neon btn-sm" href="https://github.com/hooriaaptech-collab" target="_blank" rel="noopener noreferrer">Live Demo</a><a class="btn btn-outline-neon btn-sm" href="https://github.com/hooriaaptech-collab" target="_blank" rel="noopener noreferrer">GitHub</a></div>
-          </article></div>
-          <div class="col-12 col-md-6 col-xl-3 reveal"><article class="glass tilt project">
-            <div class="thumb t2"></div>
-            <h3>Student Management System</h3>
-            <p>CRUD for students, courses and results.</p>
-            <div class="badges"><span>PHP</span><span>MySQL</span></div>
-            <div class="d-flex gap-2"><a class="btn btn-neon btn-sm" href="https://github.com/hooriaaptech-collab" target="_blank" rel="noopener noreferrer">Live Demo</a><a class="btn btn-outline-neon btn-sm" href="https://github.com/hooriaaptech-collab" target="_blank" rel="noopener noreferrer">GitHub</a></div>
-          </article></div>
-          <div class="col-12 col-md-6 col-xl-3 reveal"><article class="glass tilt project">
-            <div class="thumb t3"></div>
-            <h3>Task Manager App</h3>
-            <p>Add, edit, delete and filter tasks, saved in localStorage.</p>
+            <h3>FOTOLAB - Camera Gear Store</h3>
+            <p>Photography gear store with product pages, brand pages (Canon, Nikon, Sony, Fujifilm) and a product comparison page.</p>
             <div class="badges"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-            <div class="d-flex gap-2"><a class="btn btn-neon btn-sm" href="https://github.com/hooriaaptech-collab" target="_blank" rel="noopener noreferrer">Live Demo</a><a class="btn btn-outline-neon btn-sm" href="https://github.com/hooriaaptech-collab" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+            <div class="d-flex gap-2">
+              <a class="btn btn-neon btn-sm" href="https://sparkling-croissant-278f8b.netlify.app" target="_blank" rel="noopener noreferrer">Live Demo</a>
+            </div>
           </article></div>
-          <div class="col-12 col-md-6 col-xl-3 reveal"><article class="glass tilt project">
+
+          <!-- Project 2: FandomVerse -->
+          <div class="col-12 col-md-6 col-xl-4 reveal"><article class="glass tilt project">
+            <div class="thumb t2"></div>
+            <h3>FandomVerse</h3>
+            <p>Fan website to explore stories, characters, trailers, events and merchandise across anime, gaming, movies, TV, K-pop, comics and manga.</p>
+            <div class="badges"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <div class="d-flex gap-2">
+              <a class="btn btn-neon btn-sm" href="https://fandom-verse-final.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+            </div>
+          </article></div>
+
+          <!-- Project 3: Vaccination system (PHP, no live demo: needs a PHP server) -->
+          <div class="col-12 col-md-6 col-xl-4 reveal"><article class="glass tilt project">
             <div class="thumb t4"></div>
-            <h3>Business Landing Page</h3>
-            <p>Fully responsive marketing website.</p>
-            <div class="badges"><span>HTML</span><span>CSS</span><span>Bootstrap</span></div>
-            <div class="d-flex gap-2"><a class="btn btn-neon btn-sm" href="https://github.com/hooriaaptech-collab" target="_blank" rel="noopener noreferrer">Live Demo</a><a class="btn btn-outline-neon btn-sm" href="https://github.com/hooriaaptech-collab" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+            <h3>E-Vaccination Management System</h3>
+            <p>Child immunization scheduling, clinic appointment booking, and admin, parent and hospital portals with secure login.</p>
+            <div class="badges"><span>PHP</span><span>MySQL</span><span>Bootstrap</span></div>
+            <div class="d-flex gap-2">
+              <a class="btn btn-neon btn-sm" href="https://github.com/hooriaaptech-collab/vaccination-managment-system" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+            </div>
           </article></div>
+
         </div>
       </div>
     </section>
@@ -196,18 +203,23 @@
           </div>
           <div class="col-lg-7 reveal">
             <!--
-              No backend yet: script.js opens the visitor's email app with mailto:.
-              LATER: to use Formspree, set action="https://formspree.io/f/YOUR_ID" method="POST"
-              and remove the submit handler in script.js. For EmailJS, load its CDN script and call
-              emailjs.send(...) inside the submit handler instead of the mailto line.
+              NETLIFY FORMS: this form works automatically once the site is hosted on Netlify.
+              - data-netlify="true" + name="contact" tell Netlify to collect the messages.
+              - Every input MUST have a name="" attribute (do not remove them).
+              - The hidden "form-name" input and the honeypot field (bot-field) are required/used for spam protection.
+              Messages appear in Netlify > your site > Forms. To get them by email:
+              Forms > Settings & notifications > Form notifications > Add notification > Email notification.
             -->
-            <form id="contactForm" class="glass p-4" novalidate>
-              <div class="mb-3"><label for="name" class="form-label">Name</label><input id="name" class="form-control" type="text" required minlength="2"><div class="invalid-feedback">Please enter your name.</div></div>
-              <div class="mb-3"><label for="email" class="form-label">Email</label><input id="email" class="form-control" type="email" required><div class="invalid-feedback">Please enter a valid email.</div></div>
-              <div class="mb-3"><label for="subject" class="form-label">Subject</label><input id="subject" class="form-control" type="text" required><div class="invalid-feedback">Please enter a subject.</div></div>
-              <div class="mb-3"><label for="message" class="form-label">Message</label><textarea id="message" class="form-control" rows="4" required minlength="10"></textarea><div class="invalid-feedback">Message must be at least 10 characters.</div></div>
+            <form id="contactForm" class="glass p-4" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+              <input type="hidden" name="form-name" value="contact">
+              <p class="d-none"><label>Don't fill this out: <input name="bot-field"></label></p>
+              <div class="mb-3"><label for="name" class="form-label">Name</label><input id="name" name="name" class="form-control" type="text" required minlength="2"><div class="invalid-feedback">Please enter your name.</div></div>
+              <div class="mb-3"><label for="email" class="form-label">Email</label><input id="email" name="email" class="form-control" type="email" required><div class="invalid-feedback">Please enter a valid email.</div></div>
+              <div class="mb-3"><label for="subject" class="form-label">Subject</label><input id="subject" name="subject" class="form-control" type="text" required><div class="invalid-feedback">Please enter a subject.</div></div>
+              <div class="mb-3"><label for="message" class="form-label">Message</label><textarea id="message" name="message" class="form-control" rows="4" required minlength="10"></textarea><div class="invalid-feedback">Message must be at least 10 characters.</div></div>
               <button type="submit" class="btn btn-neon">Send Message</button>
-              <div id="formOk" class="alert alert-success mt-3 d-none" role="status">Thanks! Your email app should open with the message ready to send.</div>
+              <div id="formOk" class="alert alert-success mt-3 d-none" role="status">Thank you! Your message has been sent. I will reply to you soon.</div>
+              <div id="formErr" class="alert alert-danger mt-3 d-none" role="alert">Sorry, the message could not be sent. Please email me directly at syedahooriya030@gmail.com.</div>
             </form>
           </div>
         </div>
