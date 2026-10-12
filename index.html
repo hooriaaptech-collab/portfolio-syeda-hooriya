@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Syeda Hooriya - Web Developer & Freelancer. PHP, MySQL, Laravel and modern front-end websites.">
+  <title>Syeda Hooriya | Web Developer & Freelancer</title>
+  <!-- Favicon: inline SVG emoji. Change the emoji to whatever you like -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+  <!-- Fonts, Bootstrap 5 and Bootstrap Icons (all via CDN) -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Loading screen (hidden by script.js after ~1.5s) -->
+  <div id="loader" aria-hidden="true"><div class="loader-ring"></div><p>SH.</p></div>
+
+  <!-- Scroll progress bar, particle canvas, cursor, floating shapes -->
+  <div id="progress"></div>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <div id="cursor" aria-hidden="true"></div>
+  <div class="floaters" aria-hidden="true">
+    <span class="shape cube-s" style="left:8%;top:20%"></span>
+    <span class="shape ring" style="left:88%;top:35%"></span>
+    <span class="shape cube-s" style="left:75%;top:80%;animation-delay:-4s"></span>
+    <span class="shape ring" style="left:5%;top:70%;animation-delay:-7s"></span>
+  </div>
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top glass-nav" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand logo" href="#home">SH<span>.</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section id="home" class="hero d-flex align-items-center">
+      <div class="container">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-7 order-2 order-lg-1 reveal">
+            <p class="hello">Hi, I'm</p>
+            <h1 class="grad-text">Syeda Hooriya</h1>
+            <h2 class="typing-line"><span id="typing"></span><span class="caret"></span></h2>
+            <p class="tagline">I turn ideas into fast, clean and responsive websites.</p>
+            <div class="d-flex flex-wrap gap-3 mb-4">
+              <a href="#projects" class="btn btn-neon">View My Work</a>
+              <a href="#contact" class="btn btn-outline-neon">Hire Me</a>
+            </div>
+            <div class="d-flex gap-3">
+              <a class="icon-btn" href="https://github.com/hooriaaptech-collab" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
+              <a class="icon-btn" href="https://www.linkedin.com/in/syeda-hooriya-a407b1437" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+          <!-- 3D cube: each face shows a skill -->
+          <div class="col-lg-5 order-1 order-lg-2 d-flex justify-content-center">
+            <div class="scene" role="img" aria-label="Rotating 3D cube showing skills">
+              <div class="cube">
+                <div class="face front">HTML</div>
+                <div class="face back">CSS</div>
+                <div class="face right">JS</div>
+                <div class="face left">PHP</div>
+                <div class="face top">MySQL</div>
+                <div class="face bottom">Laravel</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title grad-text reveal">About Me</h2>
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-8 reveal">
+            <div class="glass p-4 h-100 d-flex flex-column flex-sm-row gap-4 align-items-center">
+              <div class="avatar" aria-label="Avatar with initials SH">SH</div>
+              <p class="mb-0">I'm a passionate web developer who turns ideas into fast, clean and responsive websites. Trained at Aptech, I build full-stack web applications using PHP, MySQL and Laravel, with modern front-ends in HTML, CSS, JavaScript and Bootstrap. I work with clients as a freelancer, focusing on quality, clear communication and on-time delivery.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 reveal">
+            <div class="row g-3">
+              <!-- data-target = number the counter counts up to -->
+              <div class="col-6"><div class="glass stat"><b data-target="10">0</b><span>+</span><small>Projects</small></div></div>
+              <div class="col-6"><div class="glass stat"><b data-target="7">0</b><span></span><small>Technologies</small></div></div>
+              <div class="col-6"><div class="glass stat"><b data-target="100">0</b><span>%</span><small>Client Satisfaction</small></div></div>
+              <div class="col-6"><div class="glass stat"><b data-target="1">0</b><span>+</span><small>Years Learning</small></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2 class="section-title grad-text reveal">Skills</h2>
+        <div class="row g-4">
+          <!-- data-level = progress bar percentage -->
+          <div class="col-6 col-md-4 col-lg-3 reveal"><div class="glass tilt skill"><i class="bi bi-filetype-html"></i><h3>HTML</h3><div class="bar"><div class="fill" data-level="90"></div></div><small>90%</small></div></div>
+          <div class="col-6 col-md-4 col-lg-3 reveal"><div class="glass tilt skill"><i class="bi bi-filetype-css"></i><h3>CSS</h3><div class="bar"><div class="fill" data-level="85"></div></div><small>85%</small></div></div>
+          <div class="col-6 col-md-4 col-lg-3 reveal"><div class="glass tilt skill"><i class="bi bi-filetype-js"></i><h3>JavaScript</h3><div class="bar"><div class="fill" data-level="75"></div></div><small>75%</small></div></div>
+          <div class="col-6 col-md-4 col-lg-3 reveal"><div class="glass tilt skill"><i class="bi bi-filetype-php"></i><h3>PHP</h3><div class="bar"><div class="fill" data-level="80"></div></div><small>80%</small></div></div>
+          <div class="col-6 col-md-4 col-lg-3 reveal"><div class="glass tilt skill"><i class="bi bi-database"></i><h3>MySQL</h3><div class="bar"><div class="fill" data-level="80"></div></div><small>80%</small></div></div>
+          <div class="col-6 col-md-4 col-lg-3 reveal"><div class="glass tilt skill"><i class="bi bi-lightning-charge"></i><h3>Laravel</h3><div class="bar"><div class="fill" data-level="70"></div></div><small>70%</small></div></div>
+          <div class="col-6 col-md-4 col-lg-3 reveal"><div class="glass tilt skill"><i class="bi bi-bootstrap"></i><h3>Bootstrap</h3><div class="bar"><div class="fill" data-level="90"></div></div><small>90%</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <!-- TO EDIT: replace both github.com/hooriaaptech-collab links in each card with the real repo / live demo URL -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title grad-text reveal">Projects</h2>
+        <div class="row g-4">
+          <div class="col-12 col-md-6 col-xl-3 reveal"><article class="glass tilt project">
+            <div class="thumb t1"></div>
+            <h3>E-Commerce Store</h3>
+            <p>Product catalog, cart and admin panel.</p>
+            <div class="badges"><span>Laravel</span><span>MySQL</span><span>Bootstrap</span></div>
+            <div class="d-flex gap-2"><a class="btn btn-neon btn-sm" href="https://github.com/hooriaaptech-collab" target="_blank" rel="noopener noreferrer">Live Demo</a><a class="btn btn-outline-neon btn-sm" href="https://github.com/hooriaaptech-collab" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+          </article></div>
+          <div class="col-12 col-md-6 col-xl-3 reveal"><article class="glass tilt project">
+            <div class="thumb t2"></div>
+            <h3>Student Management System</h3>
+            <p>CRUD for students, courses and results.</p>
+            <div class="badges"><span>PHP</span><span>MySQL</span></div>
+            <div class="d-flex gap-2"><a class="btn btn-neon btn-sm" href="https://github.com/hooriaaptech-collab" target="_blank" rel="noopener noreferrer">Live Demo</a><a class="btn btn-outline-neon btn-sm" href="https://github.com/hooriaaptech-collab" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+          </article></div>
+          <div class="col-12 col-md-6 col-xl-3 reveal"><article class="glass tilt project">
+            <div class="thumb t3"></div>
+            <h3>Task Manager App</h3>
+            <p>Add, edit, delete and filter tasks, saved in localStorage.</p>
+            <div class="badges"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <div class="d-flex gap-2"><a class="btn btn-neon btn-sm" href="https://github.com/hooriaaptech-collab" target="_blank" rel="noopener noreferrer">Live Demo</a><a class="btn btn-outline-neon btn-sm" href="https://github.com/hooriaaptech-collab" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+          </article></div>
+          <div class="col-12 col-md-6 col-xl-3 reveal"><article class="glass tilt project">
+            <div class="thumb t4"></div>
+            <h3>Business Landing Page</h3>
+            <p>Fully responsive marketing website.</p>
+            <div class="badges"><span>HTML</span><span>CSS</span><span>Bootstrap</span></div>
+            <div class="d-flex gap-2"><a class="btn btn-neon btn-sm" href="https://github.com/hooriaaptech-collab" target="_blank" rel="noopener noreferrer">Live Demo</a><a class="btn btn-outline-neon btn-sm" href="https://github.com/hooriaaptech-collab" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+          </article></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EDUCATION ============ -->
+    <section id="education" class="section">
+      <div class="container">
+        <h2 class="section-title grad-text reveal">Education &amp; Experience</h2>
+        <div class="timeline">
+          <div class="t-item reveal"><div class="glass p-4">
+            <h3>Aptech - Web Development</h3>
+            <p class="mb-0">Learned HTML, CSS, JavaScript, PHP, MySQL and Laravel by building real, database-driven web applications.</p>
+          </div></div>
+          <div class="t-item reveal"><div class="glass p-4">
+            <h3>Freelancing - Web Developer</h3>
+            <p class="mb-0">Building responsive websites and web apps for clients, with clear communication and on-time delivery.</p>
+          </div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section-title grad-text reveal">Contact</h2>
+        <div class="row g-4">
+          <div class="col-lg-5 reveal">
+            <div class="glass p-4 h-100">
+              <p>Have a project in mind? Send a message and I'll reply soon.</p>
+              <a class="contact-link" href="mailto:syedahooriya030@gmail.com"><i class="bi bi-envelope"></i> syedahooriya030@gmail.com</a>
+              <a class="contact-link" href="https://www.linkedin.com/in/syeda-hooriya-a407b1437" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i> LinkedIn</a>
+              <a class="contact-link" href="https://github.com/hooriaaptech-collab" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i> GitHub</a>
+            </div>
+          </div>
+          <div class="col-lg-7 reveal">
+            <!--
+              No backend yet: script.js opens the visitor's email app with mailto:.
+              LATER: to use Formspree, set action="https://formspree.io/f/YOUR_ID" method="POST"
+              and remove the submit handler in script.js. For EmailJS, load its CDN script and call
+              emailjs.send(...) inside the submit handler instead of the mailto line.
+            -->
+            <form id="contactForm" class="glass p-4" novalidate>
+              <div class="mb-3"><label for="name" class="form-label">Name</label><input id="name" class="form-control" type="text" required minlength="2"><div class="invalid-feedback">Please enter your name.</div></div>
+              <div class="mb-3"><label for="email" class="form-label">Email</label><input id="email" class="form-control" type="email" required><div class="invalid-feedback">Please enter a valid email.</div></div>
+              <div class="mb-3"><label for="subject" class="form-label">Subject</label><input id="subject" class="form-control" type="text" required><div class="invalid-feedback">Please enter a subject.</div></div>
+              <div class="mb-3"><label for="message" class="form-label">Message</label><textarea id="message" class="form-control" rows="4" required minlength="10"></textarea><div class="invalid-feedback">Message must be at least 10 characters.</div></div>
+              <button type="submit" class="btn btn-neon">Send Message</button>
+              <div id="formOk" class="alert alert-success mt-3 d-none" role="status">Thanks! Your email app should open with the message ready to send.</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer text-center">
+    <div class="container">
+      <div class="d-flex justify-content-center gap-3 mb-3">
+        <a class="icon-btn" href="https://github.com/hooriaaptech-collab" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
+        <a class="icon-btn" href="https://www.linkedin.com/in/syeda-hooriya-a407b1437" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        <a class="icon-btn" href="mailto:syedahooriya030@gmail.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
+      </div>
+      <p class="mb-0">&copy; 2026 Syeda Hooriya. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button id="toTop" class="icon-btn" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
